@@ -168,18 +168,23 @@
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
            
-            <form id="contactform" method="POST">
-                <input type="text" name="name" placeholder="Your name">
-                <input type="email" name="_replyto" placeholder="Your email">
-                <input type="hidden" name="_subject" value="Website contact" />
-                <textarea name="message" placeholder="Your message"></textarea>
-                <input type="text" name="_gotcha" style="display:none" />
-                <input type="submit" value="Send">
-            </form>
-            <script>
-                var contactform =  document.getElementById('contactform');
-                contactform.setAttribute('action', '//formspree.io/' + 'azurehorsecreations' + '@' + 'gmail' + '.' + 'com');
-            </script>
+<form action="//formspree.io/azurehorsecreations@gmail.com" method="POST">
+ <fieldset>
+ <label for="name">Your name</label><br>
+ <input type="text" name="name" placeholder="Name" id="name" required>
+ </fieldset>
+ <fieldset>
+ <label for="_replyto">Your email</label><br>
+ <input type="email" name="_replyto" placeholder="azurehorsecreations@gmail.com" id="_replyto" required>
+ </fieldset>
+ <fieldset>
+ <label for="message">Your message</label><br>
+ <textarea name="message" rows="1" placeholder="Message" id="message" required></textarea>
+ </fieldset>
+ <input class="hidden" type="text" name="_gotcha" style="display:none">
+ <input class="hidden" type="hidden" name="_subject" value="Message via http://azurehoresecreations.com">
+<input class="button submit" type="submit" value="Send">
+</form>
             
             <form name="sentMessage" id="contactForm" novalidate="novalidate">
               <div class="control-group">
